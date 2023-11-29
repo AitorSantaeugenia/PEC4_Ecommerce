@@ -12,9 +12,9 @@
             <p [ngClass]="{'OnSaleText': article.isOnSale == true, 'NotOnSaleText': article.isOnSale == false}">{{article.price}} €</p>
             <p [ngClass]="{'OnSaleText': article.isOnSale == true, 'NotOnSaleText': article.isOnSale == false}">En stock {{article.quantityInCart}} unitats</p>
             <div class="article-item-info-counter" *ngIf="article.isOnSale == true">
-                <button class="article-item-info-counter-button" (click)="incrementCounter(counter, article.quantityInCart)">+</button>
+                <button class="article-item-info-counter-button" (click)="incCounter(counter, article.quantityInCart)">+</button>
                 <span id="quantity">{{counter}}</span>
-                <button class="article-item-info-counter-button" (click)="decrementCounter(counter, article.quantityInCart)" *ngIf="counter>0"  >-</button>
+                <button class="article-item-info-counter-button" (click)="decCounter(counter, article.quantityInCart)" *ngIf="counter>0"  >-</button>
             </div>
         </figcaption>
     </div>
