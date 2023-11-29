@@ -24,18 +24,23 @@ export class ArticleItemComponent {
       imageUrl: "./../../assets/images/article-1.png",
       price: 87.59,
       isOnSale: false,
-      quantityInCart:10,
+      quantityInCart:0,
     }
   ];
 
   ngOnInit(): void {
   }
 
-  incrementCounter(counter:number){
-    this.counter++;
+  incrementCounter(counter:number, onStock:number){
+    if(counter < onStock){
+      this.counter++;
+    }else{
+      this.counter == onStock;
+    }
+    
   } 
 
-  decrementCounter(counter:number){
+  decrementCounter(counter:number, onStock:number){
     this.counter--;
   }
 }
