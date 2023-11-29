@@ -52,8 +52,7 @@
 }
 
 .NotOnSaleText{
-    color:red;
-    text-decoration: line-through;
+    color:rgb(103, 103, 103);
 }
 
 .article-item-info-counter-button{
