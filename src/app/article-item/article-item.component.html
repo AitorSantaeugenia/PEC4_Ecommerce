@@ -1,0 +1,20 @@
+<h1 class="title">PEC4 - Exercici 3</h1>
+<div class="article-item" *ngFor = "let article of article_list" [ngClass]="{'onSale': article.isOnSale == true, 'notOnSale': article.isOnSale == false}">
+    <div class="article-item-out-of-stock" [ngClass]="{'displayTrue': article.isOnSale == false, 'displayFalse': article.isOnSale == true}">
+        <h2>Out of stock</h2>
+    </div>
+    <div class="article-item-image">
+        <img src="{{article.imageUrl}}" alt="{{article.name}}" />
+    </div>
+    <div class="article-item-info">
+        <figcaption>
+            <h2>{{article.name}}</h2>
+            <p [ngClass]="{'OnSaleText': article.isOnSale == true, 'NotOnSaleText': article.isOnSale == false}">{{article.price}} €</p>
+            <div class="article-item-info-counter">
+                <button class="article-item-info-counter-button" (click)="incrementCounter(counter)">+</button>
+                <span id="quantity">{{counter}}</span>
+                <button class="article-item-info-counter-button" (click)="decrementCounter(counter)" *ngIf="counter>0"  >-</button>
+            </div>
+        </figcaption>
+    </div>
+</div>
